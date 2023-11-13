@@ -14,6 +14,7 @@ namespace Loja_Online_POO
 {
     public partial class Form1 : Form
     {
+        private string originalPassword = "";
         public Form1()
         {
             InitializeComponent();
@@ -38,12 +39,24 @@ namespace Loja_Online_POO
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            string originalText = textBox2.Text;
-            string maskedText = new string('*', originalText.Length);
-    
-            textBox2.Text = maskedText;
+            string currentText = textBox1.Text;
 
-            textBox2.SelectionStart = textBox2.Text.Length;
+            
+            if (string.IsNullOrEmpty(originalPassword))
+            {
+                originalPassword = currentText;
+            }
+
+            
+            string maskedText = new string('*', currentText.Length);
+
+            
+            textBox1.Text = maskedText;
+
+            
+            textBox1.SelectionStart = textBox1.Text.Length;
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,7 +69,7 @@ namespace Loja_Online_POO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "Admin" && textBox2.Text == "adminpotente")
+            if (textBox1.Text == "Admin" && textBox2.Text == originalPassword)
             {
                 MessageBox.Show("Registo executado com sucesso!", "Registo", MessageBoxButtons.OK);
 
