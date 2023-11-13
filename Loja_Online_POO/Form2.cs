@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Loja_Online_POO
 {
-    public partial class Form2 : Form
+    public partial class StoreFront : Form
     {
-        public Form2()
+        public StoreFront()
         {
             InitializeComponent();
         }

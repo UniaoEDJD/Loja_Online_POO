@@ -33,33 +33,12 @@ namespace Loja_Online_POO
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string text = textBox1.Text;
-            text = "Admin";
-
-            if (text == "Admin")
-            {
-                MessageBox.Show("Nome de Usuário correto.");
-            }
-            else
-            {
-                MessageBox.Show("Nome de Usuário incorreto.\n Tente novamente!");
-            }
 
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-             string pass = textBox2.Text;
-             textBox2.Text = "lojaonline";
-
-            if (textBox2.Text == pass)
-            {
-                MessageBox.Show("Password correta.");
-            }
-            else
-            {
-                MessageBox.Show("Password incorreta.\n Tente novamente.");
-            }
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -75,7 +54,7 @@ namespace Loja_Online_POO
             MessageBox.Show("Registo executado com sucesso!", "Registo", MessageBoxButtons.OK);
 
             Formprincipal = this;
-            Form2 f2 = new Form2();
+            StoreFront f2 = new StoreFront();
             f2.Show();
             this.Hide();
         }
