@@ -8,9 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
-using FireSharp.Config;
-using FireSharp.Response;
-using FireSharp.Interfaces;
+
 
 namespace Loja_Online_POO
 {
@@ -21,12 +19,14 @@ namespace Loja_Online_POO
             InitializeComponent();
         }
 
+     
+
         public static Form Formprincipal = null;
         public static string nome = null;
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         private void kryptonPalette1_PalettePaint(object sender, PaletteLayoutEventArgs e)
@@ -36,12 +36,12 @@ namespace Loja_Online_POO
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-          
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,12 +54,21 @@ namespace Loja_Online_POO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Registo executado com sucesso!", "Registo", MessageBoxButtons.OK);
+            if (textBox1.Text == "Admin" && textBox2.Text == "**********")
+            {
+                MessageBox.Show("Registo executado com sucesso!", "Registo", MessageBoxButtons.OK);
 
-            Formprincipal = this;
-            StoreFront f2 = new StoreFront();
-            f2.Show();
-            this.Hide();
+                Formprincipal = this;
+                StoreFront f2 = new StoreFront();
+                f2.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("O nome de usuário ou a passdword está errada.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            
+          
         }
     }
 }

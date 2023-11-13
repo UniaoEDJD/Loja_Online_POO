@@ -44,6 +44,7 @@
             this.Name = "StoreFront";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StoreFront";
+            this.Load += new System.EventHandler(this.StoreFront_Load);
             this.ResumeLayout(false);
 
         }

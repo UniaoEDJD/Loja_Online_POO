@@ -16,5 +16,10 @@ namespace Loja_Online_POO
         {
             InitializeComponent();
         }
+
+        private void StoreFront_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
