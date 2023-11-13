@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ComponentFactory.Krypton.Toolkit;
+
 
 
 namespace Loja_Online_POO
 {
-    public partial class Form1 : KryptonForm
+    public partial class Form1 : Form
     {
         public Form1()
         {
@@ -29,10 +29,7 @@ namespace Loja_Online_POO
           
         }
 
-        private void kryptonPalette1_PalettePaint(object sender, PaletteLayoutEventArgs e)
-        {
-
-        }
+       
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -41,7 +38,12 @@ namespace Loja_Online_POO
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            
+            string originalText = textBox2.Text;
+            string maskedText = new string('*', originalText.Length);
+    
+            textBox2.Text = maskedText;
+
+            textBox2.SelectionStart = textBox2.Text.Length;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,7 +56,7 @@ namespace Loja_Online_POO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "Admin" && textBox2.Text == "**********")
+            if (textBox1.Text == "Admin" && textBox2.Text == "adminpotente")
             {
                 MessageBox.Show("Registo executado com sucesso!", "Registo", MessageBoxButtons.OK);
 

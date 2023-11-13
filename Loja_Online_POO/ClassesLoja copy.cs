@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -10,13 +10,13 @@ namespace Loja_Online_POO
     internal class ClassesLoja
     {
         public string conta {  get; set; }
-        public int venda { get; set; }
+        public int vendas { get; set; }
         public string caixacorreio { get; set; }
 
         public ClassesLoja(string nome, int vendas, string email) 
         {
             conta = nome;
-            vendas = venda;
+            dinheiro = vendas;
             caixacorreio = email;
         }
 
