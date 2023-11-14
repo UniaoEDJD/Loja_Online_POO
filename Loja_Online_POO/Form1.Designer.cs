@@ -134,7 +134,7 @@
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Location = new System.Drawing.Point(0, 106);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1157, 440);
+            this.panel1.Size = new System.Drawing.Size(1199, 440);
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -149,8 +149,8 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.MintCream;
             this.BackgroundImage = global::Loja_Online_POO.Properties.Resources.pexels_pixabay_531880;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -163,8 +163,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Location = new System.Drawing.Point(30, 50);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loja Online";
             this.Load += new System.EventHandler(this.Form1_Load);
