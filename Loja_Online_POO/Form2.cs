@@ -12,6 +12,7 @@ namespace Loja_Online_POO
 {
     public partial class StoreFront : Form
     {
+        bool isbtnvis;
         public StoreFront()
         {
             InitializeComponent();
@@ -28,6 +29,36 @@ namespace Loja_Online_POO
             {
                 Application.Exit();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = !panel2.Visible;
+            isbtnvis = !isbtnvis;
+            addCat.Visible = isbtnvis;
+            NavCat.Visible = isbtnvis;
+            AddProd.Visible = isbtnvis;
+            editList.Visible = isbtnvis;
+        }
+
+        private void NavCat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addCat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddProd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
