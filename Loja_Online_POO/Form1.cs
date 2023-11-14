@@ -38,12 +38,7 @@ namespace Loja_Online_POO
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            string originalText = textBox2.Text;
-            string maskedText = new string('*', originalText.Length);
-    
-            textBox2.Text = maskedText;
-
-            textBox2.SelectionStart = textBox2.Text.Length;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
