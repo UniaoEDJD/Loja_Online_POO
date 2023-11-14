@@ -73,6 +73,16 @@ namespace Loja_Online_POO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Hamburger_icon_svg {
+            get {
+                object obj = ResourceManager.GetObject("Hamburger_icon.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pexels_pixabay_531880 {
             get {
                 object obj = ResourceManager.GetObject("pexels-pixabay-531880", resourceCulture);
