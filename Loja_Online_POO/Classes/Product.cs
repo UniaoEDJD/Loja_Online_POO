@@ -50,7 +50,7 @@ namespace Loja_Online_POO.Classes
                 + this.Warranty + "\nCategoria: " + this.Category + "\nImagem: " + this.Image;
         }
 
-        public string Pesquisa_Produto(Product[] vetor, string nome)
+        public string Pesquisa_Produto(Product[] vetor, string nomeProduto)
         {
             //função para pesquisar um produto
 
@@ -58,7 +58,7 @@ namespace Loja_Online_POO.Classes
 
             for (int i = 0; i < vetor.Length; i++)
             {
-                if (vetor[i].productName == nome)
+                if (vetor[i].productName == nomeProduto)
                 {
                     resultado = vetor[i].ToString();
                 }
@@ -67,7 +67,7 @@ namespace Loja_Online_POO.Classes
             return resultado;
         }
 
-        public string Pesquisa_Categoria(Product[] vetor, string nome)
+        public string Pesquisa_Categoria(Product[] vetor, string nomeCategoria)
         {
             //função para pesquisar uma categoria
 
@@ -75,7 +75,7 @@ namespace Loja_Online_POO.Classes
 
             for (int i = 0; i < vetor.Length; i++)
             {
-                if (vetor[i].Category == nome)
+                if (vetor[i].Category == nomeCategoria)
                 {
                     resultado = vetor[i].ToString();
                 }
