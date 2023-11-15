@@ -8,16 +8,22 @@ using System.Windows.Forms;
 
 namespace Loja_Online_POO.Classes
 {
-    public class Categoria
+    public class Categoria //classe principal
     {
+        //atributos classe
+
         public int CategoryID { get; set; }
         public string Name { get; set; }
 
         public List<Product> Products { get; set; }
         
-        public Categoria()
+        //construtores classe
+
+        public Categoria(int ID, string nome)
         {
             Products = new List<Product>();
+            CategoryID = ID;
+            Name = nome;
         }
 
         List<Categoria> categorias;
