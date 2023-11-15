@@ -18,7 +18,7 @@ namespace Loja_Online_POO
         
         public Categoria NovaCat { get; set;}
 
-        List<Categoria> categorias = LoadHelp.LoadCategoriesFromFile();
+        List<Categoria> categorias = LoadHelp.LoadFromFile<Categoria>("categories.txt");
 
 
 
@@ -57,6 +57,10 @@ namespace Loja_Online_POO
                 MessageBox.Show("error", "error");
             }
         }
+
+
+
+        //funcao que guarda o nome e id da categoria num ficheiro .txt
         public void SaveCategoriaToFile(Categoria categoria)
         {
             string fileName = "categories.txt";
@@ -77,6 +81,9 @@ namespace Loja_Online_POO
             MessageBox.Show("Categoria saved successfully.", "Success");
         }
 
+
+
+
         public void SaveCategoriaToFileInternal(Categoria categoria)
         {
             string fileName = "categories.txt";
@@ -88,6 +95,10 @@ namespace Loja_Online_POO
                 sw.WriteLine($"CategoryID: {categoria.CategoryID}, Name: {categoria.Name}");
             }
         }
+
+
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {

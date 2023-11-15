@@ -15,16 +15,6 @@ namespace Loja_Online_POO.Classes
         public int CategoryID { get; set; }
         public string Name { get; set; }
 
-        public List<Product> Products { get; set; }
-        
-        //construtores classe
-
-        public Categoria()
-        {
-            Products = new List<Product>();
-        }
-
-        List<Categoria> categorias;
 
     }
 }

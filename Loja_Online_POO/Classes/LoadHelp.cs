@@ -5,51 +5,66 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace Loja_Online_POO.Classes
 {
     public static class LoadHelp
     {
-        public static List<Categoria> LoadCategoriesFromFile()
+        // funcao generica que pode carregar tanto os produtos como as categorias a partir dos seus respetivos ficheiros .txt
+        public static List<T> LoadFromFile<T>(string fileName) where T : new()
         {
-            string fileName = "categories.txt";
-            List<Categoria> categories = new List<Categoria>();
+            List<T> items = new List<T>();
 
             if (File.Exists(fileName))
             {
-                // Read all lines from the file
+                
                 string[] lines = File.ReadAllLines(fileName);
 
                 foreach (string line in lines)
                 {
-                    // Split the line to extract CategoryID and Name
+                   
                     string[] parts = line.Split(',');
 
-                    // Parse values
-                    if (parts.Length == 2 && int.TryParse(parts[0].Split(':')[1].Trim(), out int categoryID))
+                    
+                    if (parts.Length > 0)
                     {
-                        string name = parts[1].Split(':')[1].Trim();
+                      
+                        T item = new T();
 
-                        // Create Categoria object
-                        Categoria category = new Categoria
+                        
+                        foreach (string part in parts)
                         {
-                            CategoryID = categoryID,
-                            Name = name
-                        };
+                            string[] keyValue = part.Split(':');
+                            if (keyValue.Length == 2)
+                            {
+                                string propertyName = keyValue[0].Trim();
+                                string propertyValue = keyValue[1].Trim();
 
-                        categories.Add(category);
+                                // Use reflection to set the property value
+                                PropertyInfo property = typeof(T).GetProperty(propertyName);
+                                if (property != null)
+                                {
+                                    TypeConverter typeConverter = TypeDescriptor.GetConverter(property.PropertyType);
+                                    object convertedValue = typeConverter.ConvertFromString(propertyValue);
+                                    property.SetValue(item, convertedValue);
+                                }
+                            }
+                        }
+
+                        
+                        items.Add(item);
                     }
                 }
             }
             else
             {
-                using (StreamWriter sw = new StreamWriter(fileName, true))
-                {
-   
-                }
+                
+                File.Create(fileName).Close();
             }
 
-            return categories;
+            return items;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Loja_Online_POO.Classes
 
         public int productID { get; set; }
         public string productName { get; set; } 
-        public int Price { get; set; }
+        public double Price { get; set; }
         public string Description { get; set; }
         public int Warranty { get; set; }
         public string Marca { get; set; }
@@ -22,18 +22,13 @@ namespace Loja_Online_POO.Classes
             get { return CategoryID; }
             set { CategoryID = value; }
         }
-        public byte[] Image { get; set; }
+        
 
         //construtores da classe
 
-        public Product(int produto, string pname, int preço, string descrição, int garantia, int prodCatID)
+        public Product() : base()
         {
-            productID = produto;
-            productName = pname;
-            Price = preço;
-            Description = descrição;
-            Warranty = garantia;
-            ProductCatID = prodCatID;
+
         }
 
         
