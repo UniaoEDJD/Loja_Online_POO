@@ -16,7 +16,7 @@ namespace Loja_Online_POO
     public partial class addCat : Form
     {
         
-        public Categoria NovaCat { get; set; }
+        public Categoria NovaCat { get; set;}
 
         List<Categoria> categorias = LoadHelp.LoadCategoriesFromFile();
 

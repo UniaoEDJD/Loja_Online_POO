@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Loja_Online_POO.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,7 +58,8 @@ namespace Loja_Online_POO
 
         private void AddProd_Click(object sender, EventArgs e)
         {
-
+            AddProd addProd = new AddProd();
+            addProd.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
