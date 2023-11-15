@@ -38,11 +38,11 @@ namespace Loja_Online_POO
             {
                 if (!string.IsNullOrEmpty(catstringID) && int.TryParse(catstringID, out catID))
                 {
-                    NovaCat = new Categoria
+                    NovaCat = new Categoria();
                     {
-                      CategoryID = catID,
-                      Name = nomeCat
-                    };
+                        productID = catID;
+                        productname = nomeCat;
+                    }
                  SaveCategoryToFile(NovaCat);
                 }
                     

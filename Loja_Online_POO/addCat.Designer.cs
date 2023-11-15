@@ -72,7 +72,6 @@
             this.Name = "addCat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar Categorias";
-            this.Load += new System.EventHandler(this.addCat_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
