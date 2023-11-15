@@ -26,6 +26,8 @@ namespace Loja_Online_POO
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //botao terminar sessao
+
             if (MessageBox.Show("Deseja terminar sessão?", "Terminar Sessão", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 this.Hide();
@@ -36,6 +38,8 @@ namespace Loja_Online_POO
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //abrir e fechar painel
+
             panel2.Visible = !panel2.Visible;
             isbtnvis = !isbtnvis;
             addCat.Visible = isbtnvis;
@@ -51,6 +55,8 @@ namespace Loja_Online_POO
 
         private void addCat_Click(object sender, EventArgs e)
         {
+            //botao adicionar categoria e esconde o forms2
+
             this.Hide();
             addCat ACA = new addCat();
             ACA.Show();
@@ -69,6 +75,8 @@ namespace Loja_Online_POO
 
         private void menu_Exit_Click(object sender, EventArgs e)
         {
+            //botao sair da app
+
             Application.Exit();
         }
     }

@@ -61,17 +61,17 @@ namespace Loja_Online_POO
         {
             string fileName = "categories.txt";
 
-            // Check if the categoria already exists
+            //Confirma se a categoria ja existe
             if (categorias.Any(cat => cat.CategoryID == categoria.CategoryID || cat.Name == categoria.Name))
             {
                 MessageBox.Show("Error: Categoria with the same ID or Name already exists.", "Error");
                 return;
             }
 
-            // Save the new categoria to the file
+            //Guarda a nova categoria
             SaveCategoriaToFileInternal(categoria);
 
-            // Update the in-memory collection
+            //Atualiza a coleçao da memoria
             categorias.Add(categoria);
 
             MessageBox.Show("Categoria saved successfully.", "Success");
@@ -81,14 +81,19 @@ namespace Loja_Online_POO
         {
             string fileName = "categories.txt";
 
-            // Open the file for writing
+            //Abre o ficheiro para escrever
             using (StreamWriter sw = new StreamWriter(fileName, true))
             {
-                // Append the new categoria information to the file
+                //Guarda a nova categoria no ficheiro 
                 sw.WriteLine($"CategoryID: {categoria.CategoryID}, Name: {categoria.Name}");
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //botao para retornar ao forms2
+
+        }
     }
 
 }
