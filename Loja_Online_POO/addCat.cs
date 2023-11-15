@@ -4,19 +4,27 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace Loja_Online_POO
 {
     public partial class addCat : Form
     {
+        private OnlineShop onlineShop;
         public Categoria NovaCat { get; set; }
-        public addCat()
+        
+
+
+        public addCat(OnlineShop shop)
         {
             InitializeComponent();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,6 +41,10 @@ namespace Loja_Online_POO
                         CategoryID = catID,
                         Name = nomeCat
                         };
+                    onlineShop.Categorias.Add(NovaCat);
+
+                    onlineShop.SaveCat();
+
                  }
                     
              }
@@ -41,6 +53,9 @@ namespace Loja_Online_POO
             {
                 MessageBox.Show("error", "error");
             }
+         
+
+        
 
         }
     }

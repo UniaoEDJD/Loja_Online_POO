@@ -12,6 +12,7 @@ namespace Loja_Online_POO
 {
     public partial class StoreFront : Form
     {
+        OnlineShop onlineShop;
         bool isbtnvis;
         public StoreFront()
         {
@@ -51,8 +52,8 @@ namespace Loja_Online_POO
         private void addCat_Click(object sender, EventArgs e)
         {
             this.Hide();
-            addCat ACA = new addCat();
-            ACA.Show();
+            addCat aca = new addCat(onlineShop);
+            aca.Show();
         }
 
         private void AddProd_Click(object sender, EventArgs e)
