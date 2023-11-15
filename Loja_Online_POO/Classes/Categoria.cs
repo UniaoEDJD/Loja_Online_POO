@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Loja_Online_POO.Classes
 {
-    internal class Categoria
+    public class Categoria
     {
         public int CategoryID { get; set; }
         public string Name { get; set; }
