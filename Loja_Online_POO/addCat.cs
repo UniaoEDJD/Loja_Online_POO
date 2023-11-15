@@ -13,7 +13,6 @@ namespace Loja_Online_POO
 {
     public partial class addCat : Form
     {
-        public Categoria NovaCat { get; set; }
         public addCat()
         {
             InitializeComponent();
@@ -21,26 +20,12 @@ namespace Loja_Online_POO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string nomeCat = textBox1.Text;
-            string catstringID  = textBox2.Text;
-            int catID;
-            if (!string.IsNullOrEmpty(nomeCat))
-             {
-                if (!string.IsNullOrEmpty(catstringID) && int.TryParse(catstringID, out catID))
-                 {
-                    NovaCat = new Categoria
-                        {
-                        CategoryID = catID,
-                        Name = nomeCat
-                        };
-                 }
-                    
-             }
-   
-            else
-            {
-                MessageBox.Show("error", "error");
-            }
+           
+
+        }
+
+        private void addCat_Load(object sender, EventArgs e)
+        {
 
         }
     }
