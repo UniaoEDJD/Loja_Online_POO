@@ -45,6 +45,8 @@ namespace Loja_Online_POO
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //botao sair da loja
+
             if (MessageBox.Show("Deseja sair da loja?", "Fechar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 Application.Exit();
@@ -53,6 +55,8 @@ namespace Loja_Online_POO
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //botao para confirmar o login
+
             if (textBox1.Text == "Admin" && textBox2.Text == "admin")
             {
                 MessageBox.Show("Registo executado com sucesso!", "Registo", MessageBoxButtons.OK);
