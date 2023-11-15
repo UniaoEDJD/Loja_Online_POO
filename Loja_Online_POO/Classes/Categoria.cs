@@ -19,11 +19,9 @@ namespace Loja_Online_POO.Classes
         
         //construtores classe
 
-        public Categoria(int ID, string nome)
+        public Categoria()
         {
             Products = new List<Product>();
-            CategoryID = ID;
-            Name = nome;
         }
 
         List<Categoria> categorias;

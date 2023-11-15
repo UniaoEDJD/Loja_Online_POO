@@ -25,7 +25,7 @@ namespace Loja_Online_POO.Classes
 
         //construtores da classe
 
-        public Product(int ID, string nome, int produto, string pname, int preço, string descrição, int garantia, int prodCatID) : base(ID, nome)
+        public Product(int produto, string pname, int preço, string descrição, int garantia, int prodCatID)
         {
             productID = produto;
             productName = pname;
