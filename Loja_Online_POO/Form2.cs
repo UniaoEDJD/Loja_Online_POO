@@ -56,8 +56,6 @@ namespace Loja_Online_POO
         private void addCat_Click(object sender, EventArgs e)
         {
             //botao adicionar categoria e esconde o forms2
-
-            this.Hide();
             addCat ACA = new addCat();
             ACA.Show();
         }

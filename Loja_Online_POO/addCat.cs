@@ -92,6 +92,17 @@ namespace Loja_Online_POO
         private void button3_Click(object sender, EventArgs e)
         {
             //botao para retornar ao forms2
+            this.Hide();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
     }
