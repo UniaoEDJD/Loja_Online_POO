@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ClassesLoja.cs" />
+    <Compile Include="Classes\Storefront.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

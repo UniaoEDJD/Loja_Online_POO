@@ -36,6 +36,7 @@
             this.verEnc = new System.Windows.Forms.Button();
             this.AddProd = new System.Windows.Forms.Button();
             this.addCat = new System.Windows.Forms.Button();
+            this.menu_Exit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +76,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.Controls.Add(this.menu_Exit);
             this.panel2.Controls.Add(this.editList);
             this.panel2.Controls.Add(this.verEnc);
             this.panel2.Controls.Add(this.AddProd);
@@ -133,6 +135,16 @@
             this.addCat.Visible = false;
             this.addCat.Click += new System.EventHandler(this.addCat_Click);
             // 
+            // menu_Exit
+            // 
+            this.menu_Exit.Location = new System.Drawing.Point(56, 530);
+            this.menu_Exit.Name = "menu_Exit";
+            this.menu_Exit.Size = new System.Drawing.Size(210, 30);
+            this.menu_Exit.TabIndex = 4;
+            this.menu_Exit.Text = "Exit";
+            this.menu_Exit.UseVisualStyleBackColor = true;
+            this.menu_Exit.Click += new System.EventHandler(this.menu_Exit_Click);
+            // 
             // StoreFront
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
@@ -167,5 +179,6 @@
         private System.Windows.Forms.Button AddProd;
         private System.Windows.Forms.Button verEnc;
         private System.Windows.Forms.Button editList;
+        private System.Windows.Forms.Button menu_Exit;
     }
 }

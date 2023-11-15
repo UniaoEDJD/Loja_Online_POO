@@ -27,7 +27,9 @@ namespace Loja_Online_POO
         {
             if (MessageBox.Show("Deseja terminar sessão?", "Terminar Sessão", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                Application.Exit();
+                this.Hide();
+                Form1 loginmenu = new Form1();
+                loginmenu.Show();
             }
         }
 
@@ -59,6 +61,11 @@ namespace Loja_Online_POO
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void menu_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
