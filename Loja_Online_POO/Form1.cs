@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Loja_Online_POO.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace Loja_Online_POO
         public Form1()
         {
             InitializeComponent();
+            
         }
 
      
@@ -51,7 +53,7 @@ namespace Loja_Online_POO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "Admin" && textBox2.Text == "adminpotente")
+            if (textBox1.Text == "Admin" && textBox2.Text == "admin")
             {
                 MessageBox.Show("Registo executado com sucesso!", "Registo", MessageBoxButtons.OK);
 

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Loja_Online_POO.Classes
 {
@@ -17,5 +19,8 @@ namespace Loja_Online_POO.Classes
         {
             Products = new List<Product>();
         }
+
+        List<Categoria> categorias;
+
     }
 }

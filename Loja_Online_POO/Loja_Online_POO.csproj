@@ -77,6 +77,7 @@
     </Compile>
     <Compile Include="Classes\Categoria.cs" />
     <Compile Include="Classes\ClassesLoja.cs" />
+    <Compile Include="Classes\LoadHelp.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\Storefront.cs" />
     <Compile Include="Form1.cs">
