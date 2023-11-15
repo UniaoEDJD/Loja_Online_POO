@@ -32,10 +32,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.addCat = new System.Windows.Forms.Button();
-            this.AddProd = new System.Windows.Forms.Button();
-            this.NavCat = new System.Windows.Forms.Button();
             this.editList = new System.Windows.Forms.Button();
+            this.verEnc = new System.Windows.Forms.Button();
+            this.AddProd = new System.Windows.Forms.Button();
+            this.addCat = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +76,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.editList);
-            this.panel2.Controls.Add(this.NavCat);
+            this.panel2.Controls.Add(this.verEnc);
             this.panel2.Controls.Add(this.AddProd);
             this.panel2.Controls.Add(this.addCat);
             this.panel2.Location = new System.Drawing.Point(0, 99);
@@ -85,17 +85,29 @@
             this.panel2.TabIndex = 1;
             this.panel2.Visible = false;
             // 
-            // addCat
+            // editList
             // 
-            this.addCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.addCat.Location = new System.Drawing.Point(56, 84);
-            this.addCat.Name = "addCat";
-            this.addCat.Size = new System.Drawing.Size(210, 30);
-            this.addCat.TabIndex = 0;
-            this.addCat.Text = "Adicionar Categoria";
-            this.addCat.UseVisualStyleBackColor = true;
-            this.addCat.Visible = false;
-            this.addCat.Click += new System.EventHandler(this.addCat_Click);
+            this.editList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editList.Location = new System.Drawing.Point(56, 297);
+            this.editList.Name = "editList";
+            this.editList.Size = new System.Drawing.Size(210, 30);
+            this.editList.TabIndex = 3;
+            this.editList.Text = "Lista de Clientes";
+            this.editList.UseVisualStyleBackColor = true;
+            this.editList.Visible = false;
+            this.editList.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // verEnc
+            // 
+            this.verEnc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.verEnc.Location = new System.Drawing.Point(56, 228);
+            this.verEnc.Name = "verEnc";
+            this.verEnc.Size = new System.Drawing.Size(210, 30);
+            this.verEnc.TabIndex = 2;
+            this.verEnc.Text = "Ver Encomedas";
+            this.verEnc.UseVisualStyleBackColor = true;
+            this.verEnc.Visible = false;
+            this.verEnc.Click += new System.EventHandler(this.NavCat_Click);
             // 
             // AddProd
             // 
@@ -104,34 +116,22 @@
             this.AddProd.Name = "AddProd";
             this.AddProd.Size = new System.Drawing.Size(210, 30);
             this.AddProd.TabIndex = 1;
-            this.AddProd.Text = "Adicionar Produto";
+            this.AddProd.Text = "Produtos";
             this.AddProd.UseVisualStyleBackColor = true;
             this.AddProd.Visible = false;
             this.AddProd.Click += new System.EventHandler(this.AddProd_Click);
             // 
-            // NavCat
+            // addCat
             // 
-            this.NavCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.NavCat.Location = new System.Drawing.Point(56, 228);
-            this.NavCat.Name = "NavCat";
-            this.NavCat.Size = new System.Drawing.Size(210, 30);
-            this.NavCat.TabIndex = 2;
-            this.NavCat.Text = "Navegar Categorias";
-            this.NavCat.UseVisualStyleBackColor = true;
-            this.NavCat.Visible = false;
-            this.NavCat.Click += new System.EventHandler(this.NavCat_Click);
-            // 
-            // editList
-            // 
-            this.editList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editList.Location = new System.Drawing.Point(56, 297);
-            this.editList.Name = "editList";
-            this.editList.Size = new System.Drawing.Size(210, 30);
-            this.editList.TabIndex = 3;
-            this.editList.Text = "Editar Lista Clientes";
-            this.editList.UseVisualStyleBackColor = true;
-            this.editList.Visible = false;
-            this.editList.Click += new System.EventHandler(this.button3_Click);
+            this.addCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.addCat.Location = new System.Drawing.Point(56, 84);
+            this.addCat.Name = "addCat";
+            this.addCat.Size = new System.Drawing.Size(210, 30);
+            this.addCat.TabIndex = 0;
+            this.addCat.Text = "Categorias";
+            this.addCat.UseVisualStyleBackColor = true;
+            this.addCat.Visible = false;
+            this.addCat.Click += new System.EventHandler(this.addCat_Click);
             // 
             // StoreFront
             // 
@@ -165,7 +165,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button addCat;
         private System.Windows.Forms.Button AddProd;
-        private System.Windows.Forms.Button NavCat;
+        private System.Windows.Forms.Button verEnc;
         private System.Windows.Forms.Button editList;
     }
 }

@@ -36,7 +36,7 @@ namespace Loja_Online_POO
             panel2.Visible = !panel2.Visible;
             isbtnvis = !isbtnvis;
             addCat.Visible = isbtnvis;
-            NavCat.Visible = isbtnvis;
+            verEnc.Visible = isbtnvis;
             AddProd.Visible = isbtnvis;
             editList.Visible = isbtnvis;
         }
