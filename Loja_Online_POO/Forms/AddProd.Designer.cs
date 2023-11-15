@@ -66,6 +66,7 @@
             this.prodDesc.Name = "prodDesc";
             this.prodDesc.Size = new System.Drawing.Size(333, 115);
             this.prodDesc.TabIndex = 3;
+            this.prodDesc.TextChanged += new System.EventHandler(this.prodDesc_TextChanged);
             // 
             // Warranty
             // 

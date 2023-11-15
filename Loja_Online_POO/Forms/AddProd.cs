@@ -14,10 +14,10 @@ namespace Loja_Online_POO.Classes
     public partial class AddProd : Form
     {
 
-        public List<Product> produtos;
+        
         public Product novoProd { get; set; }
         List<Categoria> categorias = LoadHelp.LoadFromFile<Categoria>("categories.txt");
-        List<Product> products = LoadHelp.LoadFromFile<Product>("produtos.txt");
+        List<Product> products = LoadHelp.LoadFromFile<Product>("products.txt");
         public AddProd()
         {
             InitializeComponent();
@@ -77,7 +77,7 @@ namespace Loja_Online_POO.Classes
             string fileName = "products.txt";
 
             // Confirm if the product already exists
-            if (products.Any(p => p.productID == product.productID))
+            if (products.Any(p => p.productID == product.productID || p.productName == product.productName))
             {
                 MessageBox.Show("Error: Product with the same ID already exists.", "Error");
                 return;
@@ -104,6 +104,11 @@ namespace Loja_Online_POO.Classes
                              $"Warranty: {product.Warranty}, Marca: {product.Marca}, " +
                              $"CategoryID: {product.ProductCatID}");
             }
+        }
+
+        private void prodDesc_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

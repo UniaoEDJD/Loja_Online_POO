@@ -46,6 +46,7 @@ namespace Loja_Online_POO.Classes
                                 PropertyInfo property = typeof(T).GetProperty(propertyName);
                                 if (property != null)
                                 {
+                                        
                                     TypeConverter typeConverter = TypeDescriptor.GetConverter(property.PropertyType);
                                     object convertedValue = typeConverter.ConvertFromString(propertyValue);
                                     property.SetValue(item, convertedValue);
