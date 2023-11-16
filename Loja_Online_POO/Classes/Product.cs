@@ -7,19 +7,30 @@ using System.Threading.Tasks;
 
 namespace Loja_Online_POO.Classes
 {
-    internal class Product : Categoria //produto herda a categoria
+    public class Product : Categoria //produto herda a categoria
     {
-        //atributoproduto
+        //atributos classe
 
-        public string marca {  get; set; }
-        public int stock { get; set; }
-
-        //classe construtor
-
-        public Product(int ID, string nome, int preço, string descrição, int garantia, string imagem, string Marca, int Stock) : base(ID, nome, preço, descrição, garantia, imagem)
+        public int productID { get; set; }
+        public string productName { get; set; } 
+        public double Price { get; set; }
+        public string Description { get; set; }
+        public int Warranty { get; set; }
+        public string Marca { get; set; }
+        public int ProductCatID
         {
-            marca = Marca;
-            stock = Stock;
+            get { return CategoryID; }
+            set { CategoryID = value; }
         }
+        
+
+        //construtores da classe
+
+        public Product() : base()
+        {
+
+        }
+
+        
     }
 }
