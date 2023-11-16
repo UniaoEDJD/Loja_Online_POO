@@ -14,6 +14,7 @@ namespace Loja_Online_POO.Classes
         public int productID { get; set; }
         public string productName { get; set; } 
         public double Price { get; set; }
+        public int Stock { get;set; }
         public string Description { get; set; }
         public int Warranty { get; set; }
         public string Marca { get; set; }

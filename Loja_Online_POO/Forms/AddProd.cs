@@ -58,6 +58,7 @@ namespace Loja_Online_POO.Classes
             int warr = Int32.Parse(Warranty.Text);          
             double price = Double.Parse(prodPrice.Text);
             int selectedCategoryID = (int)comboBox1.SelectedValue;
+            int stock = Int32.Parse(stockBox.Text);
 
 
             if (!String.IsNullOrEmpty(prodID.Text)) 
@@ -108,7 +109,7 @@ namespace Loja_Online_POO.Classes
                 sw.WriteLine($"productID: {product.productID}, Name: {product.productName}, " +
                              $"Price: {product.Price}, Description: {product.Description}, " +
                              $"Warranty: {product.Warranty}, Marca: {product.Marca}, " +
-                             $"CategoryID: {product.ProductCatID}");
+                             $"CategoryID: {product.ProductCatID}, Stock: {product.Stock}");
             }
         }
 

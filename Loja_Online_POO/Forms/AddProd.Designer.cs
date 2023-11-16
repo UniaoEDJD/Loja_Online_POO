@@ -36,6 +36,7 @@
             this.prodPrice = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.stockBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // prodID
@@ -101,11 +102,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // stockBox
+            // 
+            this.stockBox.Location = new System.Drawing.Point(733, 115);
+            this.stockBox.Name = "stockBox";
+            this.stockBox.Size = new System.Drawing.Size(100, 20);
+            this.stockBox.TabIndex = 9;
+            // 
             // AddProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 539);
+            this.Controls.Add(this.stockBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.prodPrice);
@@ -131,5 +140,6 @@
         private System.Windows.Forms.TextBox prodPrice;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox stockBox;
     }
 }
