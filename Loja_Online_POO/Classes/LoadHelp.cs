@@ -19,21 +19,16 @@ namespace Loja_Online_POO.Classes
 
             if (File.Exists(fileName))
             {
-                
                 string[] lines = File.ReadAllLines(fileName);
 
                 foreach (string line in lines)
                 {
-                   
                     string[] parts = line.Split(',');
 
-                    
                     if (parts.Length > 0)
                     {
-                      
                         T item = new T();
 
-                        
                         foreach (string part in parts)
                         {
                             string[] keyValue = part.Split(':');
@@ -42,26 +37,28 @@ namespace Loja_Online_POO.Classes
                                 string propertyName = keyValue[0].Trim();
                                 string propertyValue = keyValue[1].Trim();
 
-                                // Use reflection to set the property value
+                                Console.WriteLine($"Debug: PropertyName: {propertyName}, PropertyValue: {propertyValue}");
+
                                 PropertyInfo property = typeof(T).GetProperty(propertyName);
                                 if (property != null)
+                                {                                                                                                           
+                                            TypeConverter typeConverter = TypeDescriptor.GetConverter(property.PropertyType);
+                                            object convertedValue = typeConverter.ConvertFromString(propertyValue);
+                                            property.SetValue(item, convertedValue);                                                                           
+                                }
+                                else
                                 {
-                                        
-                                    TypeConverter typeConverter = TypeDescriptor.GetConverter(property.PropertyType);
-                                    object convertedValue = typeConverter.ConvertFromString(propertyValue);
-                                    property.SetValue(item, convertedValue);
+                                    Console.WriteLine($"Error: Property {propertyName} not found in class {typeof(T).Name}");
                                 }
                             }
                         }
 
-                        
                         items.Add(item);
                     }
                 }
             }
             else
             {
-                
                 File.Create(fileName).Close();
             }
 

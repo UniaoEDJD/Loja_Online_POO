@@ -21,9 +21,7 @@ namespace Loja_Online_POO.Classes
         {
             get { return CategoryID; }
             set { CategoryID = value; }
-        }
-        
-
+        }       
         //construtores da classe
 
         public Product() : base()

@@ -32,11 +32,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.menu_Exit = new System.Windows.Forms.Button();
             this.editList = new System.Windows.Forms.Button();
             this.verEnc = new System.Windows.Forms.Button();
             this.AddProd = new System.Windows.Forms.Button();
             this.addCat = new System.Windows.Forms.Button();
-            this.menu_Exit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -53,13 +53,15 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.White;
             this.button2.BackgroundImage = global::Loja_Online_POO.Properties.Resources.Hamburger_icon_svg;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.ForeColor = System.Drawing.Color.Silver;
             this.button2.Location = new System.Drawing.Point(0, 76);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(25, 24);
             this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
@@ -86,6 +88,16 @@
             this.panel2.Size = new System.Drawing.Size(318, 574);
             this.panel2.TabIndex = 1;
             this.panel2.Visible = false;
+            // 
+            // menu_Exit
+            // 
+            this.menu_Exit.Location = new System.Drawing.Point(56, 530);
+            this.menu_Exit.Name = "menu_Exit";
+            this.menu_Exit.Size = new System.Drawing.Size(210, 30);
+            this.menu_Exit.TabIndex = 4;
+            this.menu_Exit.Text = "Exit";
+            this.menu_Exit.UseVisualStyleBackColor = true;
+            this.menu_Exit.Click += new System.EventHandler(this.menu_Exit_Click);
             // 
             // editList
             // 
@@ -134,16 +146,6 @@
             this.addCat.UseVisualStyleBackColor = true;
             this.addCat.Visible = false;
             this.addCat.Click += new System.EventHandler(this.addCat_Click);
-            // 
-            // menu_Exit
-            // 
-            this.menu_Exit.Location = new System.Drawing.Point(56, 530);
-            this.menu_Exit.Name = "menu_Exit";
-            this.menu_Exit.Size = new System.Drawing.Size(210, 30);
-            this.menu_Exit.TabIndex = 4;
-            this.menu_Exit.Text = "Exit";
-            this.menu_Exit.UseVisualStyleBackColor = true;
-            this.menu_Exit.Click += new System.EventHandler(this.menu_Exit_Click);
             // 
             // StoreFront
             // 

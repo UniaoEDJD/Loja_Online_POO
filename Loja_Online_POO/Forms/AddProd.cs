@@ -12,20 +12,22 @@ using System.Windows.Forms;
 namespace Loja_Online_POO.Classes
 {
     public partial class AddProd : Form
-    {
-
-        
+    {      
+        //inicializacao das Listas e do novo produto
         public Product novoProd { get; set; }
         List<Categoria> categorias = LoadHelp.LoadFromFile<Categoria>("categories.txt");
         List<Product> products = LoadHelp.LoadFromFile<Product>("products.txt");
+
         public AddProd()
         {
             InitializeComponent();
             PopulateCatDrop();
         }
 
+        //funcao que vai a lista categorias e procura no ficheiro texto o nome e id e popula a lista com o nome, e atribui o respetivo ID
         public void PopulateCatDrop()
         {
+            
             comboBox1.DataSource = categorias;
             comboBox1.DisplayMember = "Name";
             comboBox1.ValueMember = "CategoryID";
@@ -45,6 +47,8 @@ namespace Loja_Online_POO.Classes
 
         }
 
+
+        //butao que busca todos os valores inseridos e guarda
         private void button1_Click(object sender, EventArgs e)
         {
             int proID = Int32.Parse(prodID.Text);
@@ -72,12 +76,14 @@ namespace Loja_Online_POO.Classes
             }
         }
 
+
+        //funcao que guarda os valores num ficheiro .txt
         public void SaveProductToFile(Product product)
         {
             string fileName = "products.txt";
 
             // Confirm if the product already exists
-            if (products.Any(p => p.productID == product.productID || p.productName == product.productName))
+            if (products.Any(p => p.productID == product.productID))
             {
                 MessageBox.Show("Error: Product with the same ID already exists.", "Error");
                 return;
@@ -99,7 +105,7 @@ namespace Loja_Online_POO.Classes
  
             using (StreamWriter sw = new StreamWriter(fileName, true))
             {
-                sw.WriteLine($"ProductID: {product.productID}, Name: {product.productName}, " +
+                sw.WriteLine($"productID: {product.productID}, Name: {product.productName}, " +
                              $"Price: {product.Price}, Description: {product.Description}, " +
                              $"Warranty: {product.Warranty}, Marca: {product.Marca}, " +
                              $"CategoryID: {product.ProductCatID}");
