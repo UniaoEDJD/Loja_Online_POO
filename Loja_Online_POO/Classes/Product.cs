@@ -7,81 +7,30 @@ using System.Threading.Tasks;
 
 namespace Loja_Online_POO.Classes
 {
-    public class Product
+    public class Product : Categoria //produto herda a categoria
     {
-        //classes
+        //atributos classe
 
-        public string productID { get; set; }
-        public string productName { get; set; }
-        public string Price { get; set; }
+        public int productID { get; set; }
+        public string productName { get; set; } 
+        public double Price { get; set; }
         public string Description { get; set; }
-        public string Warranty { get; set; }
-        public string Category { get; set; }
-        public string Image { get; set; }
-
-        public Product()
+        public int Warranty { get; set; }
+        public string Marca { get; set; }
+        public int ProductCatID
         {
-            this.productID = "";
-            this.productName = "";
-            this.Price = "";
-            this.Description = "";
-            this.Warranty = "";
-            this.Category = "";
-            this.Image = "";
+            get { return CategoryID; }
+            set { CategoryID = value; }
+        }
+        
+
+        //construtores da classe
+
+        public Product() : base()
+        {
+
         }
 
-        public Product(string ID, string name, string preço, string descriçao, string garantia, string categoria, string imagem)
-        {
-            //nomes, ids e preços?
-
-            this.productID = ID;
-            this.productName = name;
-            this.Price = preço;
-            this.Description = descriçao;
-            this.Warranty = garantia;
-            this.Category = categoria;
-            this.Image = imagem;
-        }
-
-        public override string ToString()
-        {
-            return "ID do produto: " + this.productID + "\nNome do produto: " + this.productName +
-                "\nPreço: " + this.Price + "\nDescrição: " + this.Description + "\nGarantia: "
-                + this.Warranty + "\nCategoria: " + this.Category + "\nImagem: " + this.Image;
-        }
-
-        public string Pesquisa_Produto(Product[] vetor, string nomeProduto)
-        {
-            //função para pesquisar um produto
-
-            string resultado = "O produto não existe...";
-
-            for (int i = 0; i < vetor.Length; i++)
-            {
-                if (vetor[i].productName == nomeProduto)
-                {
-                    resultado = vetor[i].ToString();
-                }
-            }
-
-            return resultado;
-        }
-
-        public string Pesquisa_Categoria(Product[] vetor, string nomeCategoria)
-        {
-            //função para pesquisar uma categoria
-
-            string resultado = "A categoria não existe...";
-
-            for (int i = 0; i < vetor.Length; i++)
-            {
-                if (vetor[i].Category == nomeCategoria)
-                {
-                    resultado = vetor[i].ToString();
-                }
-            }
-
-            return resultado;
-        }
+        
     }
 }

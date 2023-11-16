@@ -16,9 +16,9 @@ namespace Loja_Online_POO
     public partial class addCat : Form
     {
         
-        public Categoria NovaCat { get; set; }
+        public Categoria NovaCat { get; set;}
 
-        List<Categoria> categorias = LoadHelp.LoadCategoriesFromFile();
+        List<Categoria> categorias = LoadHelp.LoadFromFile<Categoria>("categories.txt");
 
 
 
@@ -57,38 +57,65 @@ namespace Loja_Online_POO
                 MessageBox.Show("error", "error");
             }
         }
+
+
+
+        //funcao que guarda o nome e id da categoria num ficheiro .txt
         public void SaveCategoriaToFile(Categoria categoria)
         {
             string fileName = "categories.txt";
 
-            // Check if the categoria already exists
+            //Confirma se a categoria ja existe
             if (categorias.Any(cat => cat.CategoryID == categoria.CategoryID || cat.Name == categoria.Name))
             {
                 MessageBox.Show("Error: Categoria with the same ID or Name already exists.", "Error");
                 return;
             }
 
-            // Save the new categoria to the file
+            //Guarda a nova categoria
             SaveCategoriaToFileInternal(categoria);
 
-            // Update the in-memory collection
+            //Atualiza a coleçao da memoria
             categorias.Add(categoria);
 
             MessageBox.Show("Categoria saved successfully.", "Success");
         }
 
+
+
+
         public void SaveCategoriaToFileInternal(Categoria categoria)
         {
             string fileName = "categories.txt";
 
-            // Open the file for writing
+            //Abre o ficheiro para escrever
             using (StreamWriter sw = new StreamWriter(fileName, true))
             {
-                // Append the new categoria information to the file
+                //Guarda a nova categoria no ficheiro 
                 sw.WriteLine($"CategoryID: {categoria.CategoryID}, Name: {categoria.Name}");
             }
         }
 
+
+
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //botao para retornar ao forms2
+            this.Hide();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
