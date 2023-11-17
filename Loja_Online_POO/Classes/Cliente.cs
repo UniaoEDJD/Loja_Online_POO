@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Loja_Online_POO.Classes
 {
-    class Cliente : Form
+    public class Cliente
     {
         public string Nome { get; set; }
         public string NIF { get; set; }
