@@ -20,6 +20,7 @@ namespace Loja_Online_POO.Forms
             InitializeComponent();
         }
 
+        List<Cliente> clientes = new List<Cliente>;
         Clientes[] list = new Clientes[0];
         Clientes a;
 
@@ -70,6 +71,11 @@ namespace Loja_Online_POO.Forms
                 MessageBox.Show("Lista Lida!");
                 Listar();
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
