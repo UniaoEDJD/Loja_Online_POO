@@ -71,7 +71,8 @@ namespace Loja_Online_POO.Classes
                     Marca = marca,
                     Warranty = warr,
                     ProductCatID = selectedCategoryID,                   
-                    Price = price
+                    Price = price,
+                    Stock = stock
                 };
                 SaveProductToFile(novoProd);
             }
