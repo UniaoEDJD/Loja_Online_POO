@@ -13,7 +13,8 @@ using System.Windows.Forms;
 namespace Loja_Online_POO.Classes
 {
     public partial class AddProd : Form
-    {      
+    {
+        string defaultPath = Directory.GetCurrentDirectory() + "\\imagens";
         //inicializacao das Listas e do novo produto
         public Product novoProd { get; set; }
         List<Categoria> categorias = LoadHelp.LoadFromFile<Categoria>("categories.txt");
@@ -39,12 +40,21 @@ namespace Loja_Online_POO.Classes
 
             if (files.Length > 0)
             {
+
+                if (!Directory.Exists(defaultPath))
+                {
+                    Directory.CreateDirectory(defaultPath);
+                }
                 string imagePath = files[0];
+                string flNm = Path.Combine(defaultPath, Guid.NewGuid().ToString() + Path.GetExtension(imagePath));
+                string dfpf = Path.Combine(defaultPath, Path.GetFileName(imagePath));
+
+                File.Copy(imagePath, flNm);
 
                 pictureBox2.Image = Image.FromFile(imagePath);
 
                
-                novoProd.ImagePath = imagePath;
+                novoProd.ImagePath = dfpf;
             }
         }
         //funcao que vai a lista categorias e procura no ficheiro texto o nome e id e popula a lista com o nome, e atribui o respetivo ID
@@ -172,14 +182,14 @@ namespace Loja_Online_POO.Classes
                 sw.WriteLine($"productID: {product.productID}, Name: {product.productName}, " +
                              $"Price: {product.Price}, Description: {product.Description}, " +
                              $"Warranty: {product.Warranty}, Marca: {product.Marca}, " +
-                             $"CategoryID: {product.ProductCatID}, Stock: {product.Stock},   +
+                             $"CategoryID: {product.ProductCatID}, Stock: {product.Stock}, " +
                              $"ImagePath: {product.ImagePath}");
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string caminho = "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Github\\Loja_Online_POO\\Loja_Online_POO\\bin\\Debug\\imagens";
+            string caminho = defaultPath;
             openFileDialog1.Filter = "Imagens|*.jpg;*.png;*.jeg";
             string imagem = "";
 
@@ -191,22 +201,14 @@ namespace Loja_Online_POO.Classes
                 System.IO.DirectoryInfo caminhoficheiro = new DirectoryInfo(openFileDialog1.FileName);
                 imagem = caminhoficheiro.Name;
                 File.Copy(imagemselect, destinationpath, true);
-                pictureBox2.Image = Image.FromFile(caminho + Nomefich);
+                pictureBox2.Image = Image.FromFile(caminho + "\\" + Nomefich);
+                novoProd.ImagePath = caminho + "\\" + imagemselect;
             }
             else
             {
                 pictureBox2.Image = null;
             }
 
-
-            if (imagem != "")
-            {
-                pictureBox2.Image = Image.FromFile(caminho + "\\imagens\\" + imagem);
-            }
-            else
-            {
-                pictureBox2.Image = null;
-            }
         }
 
         private void label6_Click(object sender, EventArgs e)
