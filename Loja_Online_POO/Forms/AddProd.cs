@@ -14,7 +14,6 @@ namespace Loja_Online_POO.Classes
 {
     public partial class AddProd : Form
     {
-        public string defaultSavepath = Directory.GetCurrentDirectory() + "\\listas\\";
         string defaultPath = Directory.GetCurrentDirectory() + "\\imagens";
         //inicializacao das Listas e do novo produto
         public Product novoProd { get; set; }
@@ -156,12 +155,7 @@ namespace Loja_Online_POO.Classes
         //funcao que guarda os valores num ficheiro .txt
         public void SaveProductToFile(Product product)
         {
-            string fileName = defaultSavepath + "products.txt";
-
-            if (!Directory.Exists(fileName))
-            {
-                Directory.CreateDirectory(fileName);
-            }
+            string fileName = "products.txt";
 
             // Confirm if the product already exists
             if (products.Any(p => p.productID == product.productID))
@@ -181,7 +175,7 @@ namespace Loja_Online_POO.Classes
 
         public void SaveProductToFileInternal(Product product)
         {
-            string fileName = defaultSavepath + "products.txt";
+            string fileName = "products.txt";
 
 
             using (StreamWriter sw = new StreamWriter(fileName, true))
