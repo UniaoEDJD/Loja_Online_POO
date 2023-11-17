@@ -172,7 +172,7 @@ namespace Loja_Online_POO.Classes
                 sw.WriteLine($"productID: {product.productID}, Name: {product.productName}, " +
                              $"Price: {product.Price}, Description: {product.Description}, " +
                              $"Warranty: {product.Warranty}, Marca: {product.Marca}, " +
-                             $"CategoryID: {product.ProductCatID}, Stock: {product.Stock}, " +
+                             $"CategoryID: {product.ProductCatID}, Stock: {product.Stock},   +
                              $"ImagePath: {product.ImagePath}");
             }
         }
