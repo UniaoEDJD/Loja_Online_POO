@@ -7,8 +7,10 @@ using System.Windows.Forms;
 
 namespace Loja_Online_POO.Classes
 {
-    public class Cliente
+    public class Cliente // classe principal
     {
+        //atributos da classe
+
         public string Nome { get; set; }
         public string NIF { get; set; }
         public string Email { get; set; }

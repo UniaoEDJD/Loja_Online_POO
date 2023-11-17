@@ -72,6 +72,8 @@ namespace Loja_Online_POO
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //botao para abrir o forms clientes
+
             Clientes clin = new Clientes();
             clin.Show();
         }

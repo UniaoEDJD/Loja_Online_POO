@@ -30,6 +30,8 @@ namespace Loja_Online_POO.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //botao para esconder forms
+
             this.Hide();
         }
 
@@ -59,6 +61,8 @@ namespace Loja_Online_POO.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //listar os clientes
+
             string ficheiro = @"materiaisS.bin";
 
             if (File.Exists(ficheiro))
