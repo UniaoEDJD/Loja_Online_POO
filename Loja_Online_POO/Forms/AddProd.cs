@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,12 +24,28 @@ namespace Loja_Online_POO.Classes
             InitializeComponent();
             PopulateCatDrop();
             this.AllowDrop = true;
+            pictureBox2.DragDrop += pictureBox2_DragDrop;
+            pictureBox2.AllowDrop = true;
             this.DragEnter += pictureBox2_DragEnter;
             this.DragDrop += pictureBox2_DragDrop;
+            novoProd = new Product();
         }
 
 
+        private void pictureBox2_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
+            if (files.Length > 0)
+            {
+                string imagePath = files[0];
+
+                pictureBox2.Image = Image.FromFile(imagePath);
+
+               
+                novoProd.ImagePath = imagePath;
+            }
+        }
         //funcao que vai a lista categorias e procura no ficheiro texto o nome e id e popula a lista com o nome, e atribui o respetivo ID
         public void PopulateCatDrop()
         {
@@ -51,7 +68,7 @@ namespace Loja_Online_POO.Classes
         {
 
         }
-
+        string xImage;
 
         //butao que busca todos os valores inseridos e guarda
         private void button1_Click(object sender, EventArgs e)
@@ -65,6 +82,11 @@ namespace Loja_Online_POO.Classes
             int selectedCategoryID = (int)comboBox1.SelectedValue;
             int stock = Int32.Parse(stockBox.Text);
             
+            
+           
+            
+
+            
 
 
             if (!String.IsNullOrEmpty(prodID.Text)) 
@@ -76,9 +98,11 @@ namespace Loja_Online_POO.Classes
                     Description = Desc,
                     Marca = marca,
                     Warranty = warr,
-                    ProductCatID = selectedCategoryID,                   
+                    ProductCatID = selectedCategoryID,
                     Price = price,
-                    Stock = stock
+                    Stock = stock,
+                    ImagePath = novoProd.ImagePath
+
                    
                 };
                 SaveProductToFile(novoProd);
@@ -114,26 +138,8 @@ namespace Loja_Online_POO.Classes
             }
         }
 
-        private void pictureBox2_DragDrop(object sender, DragEventArgs e)
-        {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+       
 
-            if (files.Length > 0)
-            {
-                string imagePath = files[0];
-
-                pictureBox2.Image = Image.FromFile(imagePath);
-
-                if (novoProd == null)
-                {
-                    novoProd = new Product();
-                }
-
-                novoProd.ImagePath = imagePath;
-
-            }
-
-        }
         //funcao que guarda os valores num ficheiro .txt
         public void SaveProductToFile(Product product)
         {
@@ -146,10 +152,10 @@ namespace Loja_Online_POO.Classes
                 return;
             }
 
-            // Save the new product
+            // Vai á funçao internal criar a linha dentro do ficheiro .txt
             SaveProductToFileInternal(product);
 
-            // Update the in-memory collection
+            
             products.Add(product);
 
             MessageBox.Show("Product saved successfully.", "Success");
