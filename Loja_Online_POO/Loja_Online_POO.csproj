@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Cliente.cs" />
     <Compile Include="Forms\addCat.cs">
       <SubType>Form</SubType>
     </Compile>

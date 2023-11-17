@@ -22,7 +22,12 @@ namespace Loja_Online_POO.Classes
         {
             InitializeComponent();
             PopulateCatDrop();
+            this.AllowDrop = true;
+            this.DragEnter += pictureBox2_DragEnter;
+            this.DragDrop += pictureBox2_DragDrop;
         }
+
+
 
         //funcao que vai a lista categorias e procura no ficheiro texto o nome e id e popula a lista com o nome, e atribui o respetivo ID
         public void PopulateCatDrop()
@@ -59,6 +64,7 @@ namespace Loja_Online_POO.Classes
             double price = Double.Parse(prodPrice.Text);
             int selectedCategoryID = (int)comboBox1.SelectedValue;
             int stock = Int32.Parse(stockBox.Text);
+            
 
 
             if (!String.IsNullOrEmpty(prodID.Text)) 
@@ -73,12 +79,61 @@ namespace Loja_Online_POO.Classes
                     ProductCatID = selectedCategoryID,                   
                     Price = price,
                     Stock = stock
+                   
                 };
                 SaveProductToFile(novoProd);
             }
         }
 
+        private void prodDesc_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddProd_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void retornar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+
+        private void pictureBox2_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+        }
+
+        private void pictureBox2_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            if (files.Length > 0)
+            {
+                string imagePath = files[0];
+
+                pictureBox2.Image = Image.FromFile(imagePath);
+
+                if (novoProd == null)
+                {
+                    novoProd = new Product();
+                }
+
+                novoProd.ImagePath = imagePath;
+
+            }
+
+        }
         //funcao que guarda os valores num ficheiro .txt
         public void SaveProductToFile(Product product)
         {
@@ -104,19 +159,15 @@ namespace Loja_Online_POO.Classes
         {
             string fileName = "products.txt";
 
- 
+
             using (StreamWriter sw = new StreamWriter(fileName, true))
             {
                 sw.WriteLine($"productID: {product.productID}, Name: {product.productName}, " +
                              $"Price: {product.Price}, Description: {product.Description}, " +
                              $"Warranty: {product.Warranty}, Marca: {product.Marca}, " +
-                             $"CategoryID: {product.ProductCatID}, Stock: {product.Stock}");
+                             $"CategoryID: {product.ProductCatID}, Stock: {product.Stock}, " +
+                             $"ImagePath: {product.ImagePath}");
             }
-        }
-
-        private void prodDesc_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

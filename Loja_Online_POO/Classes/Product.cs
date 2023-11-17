@@ -18,6 +18,7 @@ namespace Loja_Online_POO.Classes
         public string Description { get; set; }
         public int Warranty { get; set; }
         public string Marca { get; set; }
+        public string ImagePath { get; set; }
         public int ProductCatID
         {
             get { return CategoryID; }
