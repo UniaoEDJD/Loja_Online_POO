@@ -67,9 +67,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(1216, 12);
+            this.button1.Location = new System.Drawing.Point(1197, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 27);
+            this.button1.Size = new System.Drawing.Size(98, 31);
             this.button1.TabIndex = 0;
             this.button1.Text = "Log-out";
             this.button1.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@
             // 
             // StoreFront
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1307, 671);

@@ -176,5 +176,42 @@ namespace Loja_Online_POO.Classes
                              $"ImagePath: {product.ImagePath}");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string caminho = "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Github\\Loja_Online_POO\\Loja_Online_POO\\bin\\Debug\\imagens";
+            openFileDialog1.Filter = "Imagens|*.jpg;*.png;*.jeg";
+            string imagem = "";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string imagemselect = openFileDialog1.FileName;
+                string Nomefich = Path.GetFileName(imagemselect);
+                string destinationpath = Path.Combine(caminho, Nomefich);
+                System.IO.DirectoryInfo caminhoficheiro = new DirectoryInfo(openFileDialog1.FileName);
+                imagem = caminhoficheiro.Name;
+                File.Copy(imagemselect, destinationpath, true);
+                pictureBox2.Image = Image.FromFile(caminho + Nomefich);
+            }
+            else
+            {
+                pictureBox2.Image = null;
+            }
+
+
+            if (imagem != "")
+            {
+                pictureBox2.Image = Image.FromFile(caminho + "\\imagens\\" + imagem);
+            }
+            else
+            {
+                pictureBox2.Image = null;
+            }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
