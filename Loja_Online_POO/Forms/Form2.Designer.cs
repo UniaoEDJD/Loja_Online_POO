@@ -37,6 +37,7 @@
             this.verEnc = new System.Windows.Forms.Button();
             this.AddProd = new System.Windows.Forms.Button();
             this.addCat = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -44,6 +45,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(130)))), ((int)(((byte)(245)))));
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -91,9 +93,9 @@
             // 
             // menu_Exit
             // 
-            this.menu_Exit.Location = new System.Drawing.Point(56, 530);
+            this.menu_Exit.Location = new System.Drawing.Point(56, 519);
             this.menu_Exit.Name = "menu_Exit";
-            this.menu_Exit.Size = new System.Drawing.Size(210, 30);
+            this.menu_Exit.Size = new System.Drawing.Size(210, 41);
             this.menu_Exit.TabIndex = 4;
             this.menu_Exit.Text = "Exit";
             this.menu_Exit.UseVisualStyleBackColor = true;
@@ -147,6 +149,19 @@
             this.addCat.Visible = false;
             this.addCat.Click += new System.EventHandler(this.addCat_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(130)))), ((int)(((byte)(245)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(177, 29);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Gestor da loja";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // StoreFront
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 29F);
@@ -166,6 +181,7 @@
             this.Text = "StoreFront";
             this.Load += new System.EventHandler(this.StoreFront_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -182,5 +198,6 @@
         private System.Windows.Forms.Button verEnc;
         private System.Windows.Forms.Button editList;
         private System.Windows.Forms.Button menu_Exit;
+        private System.Windows.Forms.Label label1;
     }
 }

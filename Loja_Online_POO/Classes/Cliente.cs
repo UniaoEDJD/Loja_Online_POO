@@ -12,5 +12,13 @@ namespace Loja_Online_POO.Classes
         public int NIF { get; set; }
         public string Email { get; set; }
         public string Morada { get; set; }
+
+        public Cliente(string nome, int nif, string email, string morada) 
+        {
+            Nome = nome;
+            NIF = nif;
+            Email = email;
+            Morada = morada;
+        }
     }
 }
