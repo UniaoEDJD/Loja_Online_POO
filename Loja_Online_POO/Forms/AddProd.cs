@@ -24,8 +24,9 @@ namespace Loja_Online_POO.Classes
             InitializeComponent();
             PopulateCatDrop();
             this.AllowDrop = true;
-            pictureBox2.DragDrop += pictureBox2_DragDrop;
             pictureBox2.AllowDrop = true;
+            pictureBox2.DragDrop += pictureBox2_DragDrop;
+            pictureBox2.DragEnter += pictureBox2_DragEnter;
             this.DragEnter += pictureBox2_DragEnter;
             this.DragDrop += pictureBox2_DragDrop;
             novoProd = new Product();
