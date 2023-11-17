@@ -138,6 +138,8 @@ namespace Loja_Online_POO.Classes
 
         private void retornar_Click(object sender, EventArgs e)
         {
+            //botao para esconder o forms
+
             this.Hide();
         }
 
@@ -190,6 +192,8 @@ namespace Loja_Online_POO.Classes
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //botao para escolher a imagem
+
             if (!Directory.Exists(defaultPath))
             {
                 Directory.CreateDirectory(defaultPath);

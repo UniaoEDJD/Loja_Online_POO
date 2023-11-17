@@ -34,6 +34,8 @@ namespace Loja_Online_POO
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //botao para guardar categoria
+
             string nomeCat = textBox1.Text;
             string catstringID = textBox2.Text;
             int catID;
@@ -118,6 +120,11 @@ namespace Loja_Online_POO
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addCat_Load(object sender, EventArgs e)
         {
 
         }
