@@ -69,7 +69,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Cliente.cs" />
+    <Compile Include="Classes\Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\addCat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +87,12 @@
     <Compile Include="Classes\Categoria.cs" />
     <Compile Include="Classes\LoadHelp.cs" />
     <Compile Include="Classes\Product.cs" />
+    <Compile Include="Forms\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddProd.resx">
       <DependentUpon>AddProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

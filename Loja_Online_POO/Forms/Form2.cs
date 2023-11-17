@@ -1,10 +1,14 @@
 ﻿using Loja_Online_POO.Classes;
+using Loja_Online_POO.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -68,7 +72,8 @@ namespace Loja_Online_POO
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Clientes clin = new Clientes();
+            clin.Show();
         }
 
         private void menu_Exit_Click(object sender, EventArgs e)
