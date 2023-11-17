@@ -10,6 +10,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Loja_Online_POO.Classes;
 
 namespace Loja_Online_POO.Forms
 {
@@ -20,9 +21,8 @@ namespace Loja_Online_POO.Forms
             InitializeComponent();
         }
 
-        List<Cliente> clientes = new List<Cliente>;
-        Clientes[] list = new Clientes[0];
-        Clientes a;
+        public Clientes novoCliente { get; set; }
+        List<Cliente> cliente = LoadHelp.LoadFromFile<Cliente>("clientes.txt");
 
         private void Clientes_Load(object sender, EventArgs e)
         {
@@ -36,46 +36,78 @@ namespace Loja_Online_POO.Forms
 
         private void Listar()
         {
-            //Funçao para listar os clientes
-            if ( list == null || list.Length == 0)
+            dataGridView1.Rows.Clear();
+
+
+
+            if (cliente == null || cliente.Count == 0)
             {
-                dataGridView1.Rows.Clear();
-                MessageBox.Show("Sem clientes disponiveis.");
+                MessageBox.Show("Sem clientes disponíveis.");
             }
             else
             {
-                dataGridView1.RowCount = list.Length;
-                for (int i = 0; i < list.Length; i++)
+                foreach (var c in cliente)
                 {
-                    dataGridView1.Rows[i].Cells[0].Value = list[i].Nome;
-                    dataGridView1.Rows[i].Cells[1].Value = list[i].NIF;
-                    dataGridView1.Rows[i].Cells[2].Value = list[i].Endereço;
-                    dataGridView1.Rows[i].Cells[3].Value = list[i].morada;
-
+                    dataGridView1.Rows.Add(c.Nome, c.NIF, c.Morada, c.Email);
                 }
             }
-            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
 
+
+
+            int lastRowIndex = dataGridView1.Rows.Count - 1;
+            if (lastRowIndex < 0 || !dataGridView1.Rows[lastRowIndex].IsNewRow)
+            { 
+                dataGridView1.Rows.Add("", "", "", "");
+            }
+
+            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);          
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string ficheiro = @"materiaisS.bin";
-
-            if (File.Exists(ficheiro))
-            {
-                IFormatter formatadorBIN = new BinaryFormatter();
-                FileStream fich = new FileStream(ficheiro, FileMode.Open);
-                list = (Clientes[])formatadorBIN.Deserialize(fich);
-                fich.Close();
-                MessageBox.Show("Lista Lida!");
-                Listar();
-            }
+            cliente = LoadHelp.LoadFromFile<Cliente>("clientes.txt");
+            MessageBox.Show("Lista Lida!");
+            Listar();
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+
+        //butao que chama a funcao savetofile e guarda num ficheiro .txt
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveClientesToFile("clientes.txt");
+            MessageBox.Show("Lista Guardada!");
+            
+        }
+
+
+        //funcao recebe os valores inseridos nas tabelas e imprime num ficheiro .txt
+        private void SaveClientesToFile(string fileName)
+        {
+            using (StreamWriter sw = new StreamWriter(fileName, false))
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        string nome = row.Cells[0].Value?.ToString();
+                        string nif = row.Cells[1].Value?.ToString();
+                        string morada = row.Cells[3].Value?.ToString();
+                        string email = row.Cells[2].Value?.ToString();
+
+                        if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(nif)
+                            && !string.IsNullOrEmpty(morada) && !string.IsNullOrEmpty(email))
+                        {
+                            sw.WriteLine($"Nome: {nome}, NIF: {nif}, Morada: {morada}, Email: {email}");
+                        }
+                    }
+                }
+            }
         }
     }
 }
