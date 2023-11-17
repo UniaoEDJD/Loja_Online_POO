@@ -14,11 +14,13 @@ namespace Loja_Online_POO.Classes
 {
     public partial class AddProd : Form
     {
+        public string defaultSavepath = Directory.GetCurrentDirectory() + "\\listas\\";
         string defaultPath = Directory.GetCurrentDirectory() + "\\imagens";
         //inicializacao das Listas e do novo produto
         public Product novoProd { get; set; }
         List<Categoria> categorias = LoadHelp.LoadFromFile<Categoria>("categories.txt");
         List<Product> products = LoadHelp.LoadFromFile<Product>("products.txt");
+        
 
         public AddProd()
         {
@@ -154,7 +156,12 @@ namespace Loja_Online_POO.Classes
         //funcao que guarda os valores num ficheiro .txt
         public void SaveProductToFile(Product product)
         {
-            string fileName = "products.txt";
+            string fileName = defaultSavepath + "products.txt";
+
+            if (!Directory.Exists(fileName))
+            {
+                Directory.CreateDirectory(fileName);
+            }
 
             // Confirm if the product already exists
             if (products.Any(p => p.productID == product.productID))
@@ -174,7 +181,7 @@ namespace Loja_Online_POO.Classes
 
         public void SaveProductToFileInternal(Product product)
         {
-            string fileName = "products.txt";
+            string fileName = defaultSavepath + "products.txt";
 
 
             using (StreamWriter sw = new StreamWriter(fileName, true))
@@ -189,9 +196,16 @@ namespace Loja_Online_POO.Classes
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (!Directory.Exists(defaultPath))
+            {
+                Directory.CreateDirectory(defaultPath);
+            }
+
             string caminho = defaultPath;
             openFileDialog1.Filter = "Imagens|*.jpg;*.png;*.jeg";
             string imagem = "";
+
+            
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -202,7 +216,7 @@ namespace Loja_Online_POO.Classes
                 imagem = caminhoficheiro.Name;
                 File.Copy(imagemselect, destinationpath, true);
                 pictureBox2.Image = Image.FromFile(caminho + "\\" + Nomefich);
-                novoProd.ImagePath = caminho + "\\" + imagemselect;
+                novoProd.ImagePath = caminho + "\\" + Nomefich;
             }
             else
             {
