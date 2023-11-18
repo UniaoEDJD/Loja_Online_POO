@@ -66,6 +66,8 @@ namespace Loja_Online_POO
 
         private void AddProd_Click(object sender, EventArgs e)
         {
+            //botao para abrir o forms para adicionar um produto
+
             AddProd addProd = new AddProd();
             addProd.Show();
         }

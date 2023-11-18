@@ -82,7 +82,7 @@ namespace Loja_Online_POO.Classes
         }
         string xImage;
 
-        //butao que busca todos os valores inseridos e guarda
+        //botao que busca todos os valores inseridos e guarda
         private void button1_Click(object sender, EventArgs e)
         {
             int proID = Int32.Parse(prodID.Text);
@@ -93,13 +93,7 @@ namespace Loja_Online_POO.Classes
             double price = Double.Parse(prodPrice.Text);
             int selectedCategoryID = (int)comboBox1.SelectedValue;
             int stock = Int32.Parse(stockBox.Text);
-            
-            
-           
-            
-
-            
-
+         
 
             if (!String.IsNullOrEmpty(prodID.Text)) 
             {
