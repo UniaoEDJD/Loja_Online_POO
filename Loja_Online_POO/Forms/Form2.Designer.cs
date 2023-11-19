@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -37,7 +38,7 @@
             this.verEnc = new System.Windows.Forms.Button();
             this.AddProd = new System.Windows.Forms.Button();
             this.addCat = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +53,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1419, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(130)))), ((int)(((byte)(245)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 24);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Gestor da loja";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button2
             // 
@@ -80,6 +94,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.menu_Exit);
             this.panel2.Controls.Add(this.editList);
             this.panel2.Controls.Add(this.verEnc);
@@ -104,7 +119,7 @@
             // editList
             // 
             this.editList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editList.Location = new System.Drawing.Point(56, 297);
+            this.editList.Location = new System.Drawing.Point(56, 321);
             this.editList.Name = "editList";
             this.editList.Size = new System.Drawing.Size(210, 30);
             this.editList.TabIndex = 3;
@@ -116,11 +131,11 @@
             // verEnc
             // 
             this.verEnc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.verEnc.Location = new System.Drawing.Point(56, 228);
+            this.verEnc.Location = new System.Drawing.Point(56, 243);
             this.verEnc.Name = "verEnc";
             this.verEnc.Size = new System.Drawing.Size(210, 30);
             this.verEnc.TabIndex = 2;
-            this.verEnc.Text = "Ver Encomedas";
+            this.verEnc.Text = "Ver Produtos";
             this.verEnc.UseVisualStyleBackColor = true;
             this.verEnc.Visible = false;
             this.verEnc.Click += new System.EventHandler(this.NavCat_Click);
@@ -128,7 +143,7 @@
             // AddProd
             // 
             this.AddProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddProd.Location = new System.Drawing.Point(56, 158);
+            this.AddProd.Location = new System.Drawing.Point(56, 162);
             this.AddProd.Name = "AddProd";
             this.AddProd.Size = new System.Drawing.Size(210, 30);
             this.AddProd.TabIndex = 1;
@@ -140,7 +155,7 @@
             // addCat
             // 
             this.addCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.addCat.Location = new System.Drawing.Point(56, 84);
+            this.addCat.Location = new System.Drawing.Point(56, 77);
             this.addCat.Name = "addCat";
             this.addCat.Size = new System.Drawing.Size(210, 30);
             this.addCat.TabIndex = 0;
@@ -149,22 +164,20 @@
             this.addCat.Visible = false;
             this.addCat.Click += new System.EventHandler(this.addCat_Click);
             // 
-            // label1
+            // button3
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(130)))), ((int)(((byte)(245)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 29);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Gestor da loja";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(56, 404);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(210, 30);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Criar Fatura";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             // 
             // StoreFront
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1307, 671);
@@ -199,5 +212,6 @@
         private System.Windows.Forms.Button editList;
         private System.Windows.Forms.Button menu_Exit;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button3;
     }
 }

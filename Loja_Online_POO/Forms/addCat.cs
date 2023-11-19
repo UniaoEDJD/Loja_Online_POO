@@ -128,6 +128,11 @@ namespace Loja_Online_POO
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
