@@ -33,12 +33,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.menu_Exit = new System.Windows.Forms.Button();
             this.editList = new System.Windows.Forms.Button();
             this.verEnc = new System.Windows.Forms.Button();
             this.AddProd = new System.Windows.Forms.Button();
             this.addCat = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -106,6 +106,18 @@
             this.panel2.TabIndex = 1;
             this.panel2.Visible = false;
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(56, 404);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(210, 30);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Criar Fatura";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // menu_Exit
             // 
             this.menu_Exit.Location = new System.Drawing.Point(56, 519);
@@ -163,17 +175,6 @@
             this.addCat.UseVisualStyleBackColor = true;
             this.addCat.Visible = false;
             this.addCat.Click += new System.EventHandler(this.addCat_Click);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(56, 404);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(210, 30);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Criar Fatura";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
             // 
             // StoreFront
             // 

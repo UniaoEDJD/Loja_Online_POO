@@ -42,7 +42,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(820, 486);
+            this.button1.Location = new System.Drawing.Point(249, 113);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 49);
             this.button1.TabIndex = 0;
@@ -72,9 +72,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1064, 81);
+            this.panel1.Size = new System.Drawing.Size(1308, 81);
             this.panel1.TabIndex = 3;
             // 
             // label3
@@ -91,8 +91,8 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(887, 9);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Location = new System.Drawing.Point(1212, 11);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 26);
             this.button3.TabIndex = 0;
@@ -124,7 +124,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 545);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.ClientSize = new System.Drawing.Size(1307, 671);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);

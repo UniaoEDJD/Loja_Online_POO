@@ -50,7 +50,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1064, 81);
+            this.panel1.Size = new System.Drawing.Size(1308, 81);
             this.panel1.TabIndex = 4;
             // 
             // label3
@@ -67,7 +67,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(887, 9);
+            this.button3.Location = new System.Drawing.Point(1212, 11);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 26);
@@ -86,7 +86,7 @@
             this.NIF,
             this.Endereço,
             this.morada});
-            this.dataGridView1.Location = new System.Drawing.Point(406, 119);
+            this.dataGridView1.Location = new System.Drawing.Point(698, 119);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -146,7 +146,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 545);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.ClientSize = new System.Drawing.Size(1307, 671);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);

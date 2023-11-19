@@ -54,7 +54,8 @@ namespace Loja_Online_POO
 
         private void NavCat_Click(object sender, EventArgs e)
         {
-
+            Produtos Ver = new Produtos();
+            Ver.Show();
         }
 
         private void addCat_Click(object sender, EventArgs e)
@@ -88,6 +89,11 @@ namespace Loja_Online_POO
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
         {
 
         }
