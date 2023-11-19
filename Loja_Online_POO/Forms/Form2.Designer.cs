@@ -94,7 +94,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.menu_Exit);
             this.panel2.Controls.Add(this.editList);
             this.panel2.Controls.Add(this.verEnc);
@@ -213,6 +212,5 @@
         private System.Windows.Forms.Button editList;
         private System.Windows.Forms.Button menu_Exit;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
     }
 }
