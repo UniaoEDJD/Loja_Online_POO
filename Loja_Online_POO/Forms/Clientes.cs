@@ -65,6 +65,8 @@ namespace Loja_Online_POO.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //botao para ler a lista de clientes
+
             cliente = LoadHelp.LoadFromFile<Cliente>("clientes.txt");
             MessageBox.Show("Lista Lida!");
             Listar();
@@ -77,7 +79,7 @@ namespace Loja_Online_POO.Forms
         }
 
 
-        //butao que chama a funcao savetofile e guarda num ficheiro .txt
+        //botao que chama a funcao savetofile e guarda num ficheiro .txt
         private void button2_Click(object sender, EventArgs e)
         {
             SaveClientesToFile("clientes.txt");
