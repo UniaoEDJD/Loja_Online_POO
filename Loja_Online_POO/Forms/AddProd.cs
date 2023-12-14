@@ -1,5 +1,4 @@
-﻿using Microsoft.SqlServer.Server;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -156,7 +155,7 @@ namespace Loja_Online_POO.Classes
             // Confirm if the product already exists
             if (products.Any(p => p.productID == product.productID))
             {
-                MessageBox.Show("Error: Product with the same ID already exists.", "Error");
+                MessageBox.Show("Erro: Produto com o mesmo ID já existe.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -166,7 +165,7 @@ namespace Loja_Online_POO.Classes
             
             products.Add(product);
 
-            MessageBox.Show("Product saved successfully.", "Success");
+            MessageBox.Show("Produto guardado com sucesso.", "Successo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         public void SaveProductToFileInternal(Product product)
@@ -218,6 +217,11 @@ namespace Loja_Online_POO.Classes
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }

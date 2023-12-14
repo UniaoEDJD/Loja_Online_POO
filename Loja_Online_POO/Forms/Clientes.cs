@@ -42,7 +42,7 @@ namespace Loja_Online_POO.Forms
 
             if (cliente == null || cliente.Count == 0)
             {
-                MessageBox.Show("Sem clientes disponíveis.");
+                MessageBox.Show("Sem clientes disponíveis.", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -68,7 +68,7 @@ namespace Loja_Online_POO.Forms
             //botao para ler a lista de clientes
 
             cliente = LoadHelp.LoadFromFile<Cliente>("clientes.txt");
-            MessageBox.Show("Lista Lida!");
+            MessageBox.Show("Lista Lida!", "Lista", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Listar();
             
         }
@@ -83,7 +83,7 @@ namespace Loja_Online_POO.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             SaveClientesToFile("clientes.txt");
-            MessageBox.Show("Lista Guardada!");
+            MessageBox.Show("Lista Guardada!", "Lista", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
         }
 
