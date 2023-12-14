@@ -31,7 +31,7 @@ namespace Loja_Online_POO.Classes
 
                         foreach (string part in parts)
                         {
-                            string[] keyValue = part.Split(':');
+                            string[] keyValue = part.Split('*');
                             if (keyValue.Length == 2)
                             {
                                 string propertyName = keyValue[0].Trim();
@@ -41,10 +41,19 @@ namespace Loja_Online_POO.Classes
 
                                 PropertyInfo property = typeof(T).GetProperty(propertyName);
                                 if (property != null)
-                                {                                                                                                           
-                                            TypeConverter typeConverter = TypeDescriptor.GetConverter(property.PropertyType);
-                                            object convertedValue = typeConverter.ConvertFromString(propertyValue);
-                                            property.SetValue(item, convertedValue);                                                                           
+                                {
+                                    if (propertyName.Equals("ImagePath", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        // Directly set the ImagePath property
+                                        property.SetValue(item, propertyValue);
+                                    }
+                                    else
+                                    {
+                                        // Use TypeConverter for other properties
+                                        TypeConverter typeConverter = TypeDescriptor.GetConverter(property.PropertyType);
+                                        object convertedValue = typeConverter.ConvertFromString(propertyValue);
+                                        property.SetValue(item, convertedValue);
+                                    }
                                 }
                                 else
                                 {

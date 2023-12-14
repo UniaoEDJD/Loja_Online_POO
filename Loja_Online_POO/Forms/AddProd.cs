@@ -156,7 +156,7 @@ namespace Loja_Online_POO.Classes
             // Confirm if the product already exists
             if (products.Any(p => p.productID == product.productID))
             {
-                MessageBox.Show("Error: Product with the same ID already exists.", "Error");
+                MessageBox.Show("Erro: Produto com o mesmo ID já existe.", "Erro");
                 return;
             }
 
@@ -166,7 +166,7 @@ namespace Loja_Online_POO.Classes
             
             products.Add(product);
 
-            MessageBox.Show("Product saved successfully.", "Success");
+            MessageBox.Show("Produto guardado com sucesso!", "Sucesso");
         }
 
         public void SaveProductToFileInternal(Product product)
@@ -176,11 +176,11 @@ namespace Loja_Online_POO.Classes
 
             using (StreamWriter sw = new StreamWriter(fileName, true))
             {
-                sw.WriteLine($"productID: {product.productID}, Name: {product.productName}, " +
-                             $"Price: {product.Price}, Description: {product.Description}, " +
-                             $"Warranty: {product.Warranty}, Marca: {product.Marca}, " +
-                             $"CategoryID: {product.ProductCatID}, Stock: {product.Stock}, " +
-                             $"ImagePath: {product.ImagePath}");
+                sw.WriteLine($"productID* {product.productID}, productName* {product.productName}, " +
+                             $"Price* {product.Price}, Description* {product.Description}, " +
+                             $"Warranty* {product.Warranty}, Marca* {product.Marca}, " +
+                             $"CategoryID* {product.ProductCatID}, Stock* {product.Stock}, " +
+                             $"ImagePath* {product.ImagePath}");
             }
         }
 

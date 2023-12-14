@@ -56,7 +56,7 @@ namespace Loja_Online_POO
             }
             else
             {
-                MessageBox.Show("error", "error");
+                MessageBox.Show("Erro", "Erro"); /*MessageBoxIcon.Exclamation*/
             }
         }
 
@@ -70,7 +70,7 @@ namespace Loja_Online_POO
             //Confirma se a categoria ja existe
             if (categorias.Any(cat => cat.CategoryID == categoria.CategoryID || cat.Name == categoria.Name))
             {
-                MessageBox.Show("Error: Categoria with the same ID or Name already exists.", "Error");
+                MessageBox.Show("Erro: Categoria com o mesmo ID ou Nome já existe.", "Erro");
                 return;
             }
 
@@ -80,7 +80,7 @@ namespace Loja_Online_POO
             //Atualiza a coleçao da memoria
             categorias.Add(categoria);
 
-            MessageBox.Show("Categoria saved successfully.", "Success");
+            MessageBox.Show("Categoria guardada com sucesso.", "Sucesso");
         }
 
 
@@ -94,7 +94,7 @@ namespace Loja_Online_POO
             using (StreamWriter sw = new StreamWriter(fileName, true))
             {
                 //Guarda a nova categoria no ficheiro 
-                sw.WriteLine($"CategoryID: {categoria.CategoryID}, Name: {categoria.Name}");
+                sw.WriteLine($"CategoryID* {categoria.CategoryID}, Name* {categoria.Name}");
             }
         }
 

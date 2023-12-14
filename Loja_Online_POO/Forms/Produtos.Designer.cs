@@ -39,13 +39,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.stockBox = new System.Windows.Forms.TextBox();
+            this.proMarca = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.prodPrice = new System.Windows.Forms.TextBox();
             this.Warranty = new System.Windows.Forms.TextBox();
             this.prodDesc = new System.Windows.Forms.TextBox();
-            this.ProdMarca = new System.Windows.Forms.TextBox();
-            this.proName = new System.Windows.Forms.TextBox();
+            this.proID = new System.Windows.Forms.TextBox();
+            this.proStock = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
@@ -158,12 +158,12 @@
             this.label9.TabIndex = 30;
             this.label9.Text = "Categoria:";
             // 
-            // stockBox
+            // proMarca
             // 
-            this.stockBox.Location = new System.Drawing.Point(83, 336);
-            this.stockBox.Name = "stockBox";
-            this.stockBox.Size = new System.Drawing.Size(100, 20);
-            this.stockBox.TabIndex = 29;
+            this.proMarca.Location = new System.Drawing.Point(83, 336);
+            this.proMarca.Name = "proMarca";
+            this.proMarca.Size = new System.Drawing.Size(100, 20);
+            this.proMarca.TabIndex = 29;
             // 
             // comboBox1
             // 
@@ -172,6 +172,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 28;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // prodPrice
             // 
@@ -195,19 +196,19 @@
             this.prodDesc.Size = new System.Drawing.Size(333, 115);
             this.prodDesc.TabIndex = 25;
             // 
-            // ProdMarca
+            // proID
             // 
-            this.ProdMarca.Location = new System.Drawing.Point(83, 310);
-            this.ProdMarca.Name = "ProdMarca";
-            this.ProdMarca.Size = new System.Drawing.Size(100, 20);
-            this.ProdMarca.TabIndex = 24;
+            this.proID.Location = new System.Drawing.Point(83, 310);
+            this.proID.Name = "proID";
+            this.proID.Size = new System.Drawing.Size(100, 20);
+            this.proID.TabIndex = 24;
             // 
-            // proName
+            // proStock
             // 
-            this.proName.Location = new System.Drawing.Point(83, 361);
-            this.proName.Name = "proName";
-            this.proName.Size = new System.Drawing.Size(100, 20);
-            this.proName.TabIndex = 23;
+            this.proStock.Location = new System.Drawing.Point(83, 361);
+            this.proStock.Name = "proStock";
+            this.proStock.Size = new System.Drawing.Size(100, 20);
+            this.proStock.TabIndex = 23;
             // 
             // pictureBox2
             // 
@@ -242,13 +243,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.stockBox);
+            this.Controls.Add(this.proMarca);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.prodPrice);
             this.Controls.Add(this.Warranty);
             this.Controls.Add(this.prodDesc);
-            this.Controls.Add(this.ProdMarca);
-            this.Controls.Add(this.proName);
+            this.Controls.Add(this.proID);
+            this.Controls.Add(this.proStock);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Produtos";
@@ -277,13 +278,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox stockBox;
+        private System.Windows.Forms.TextBox proMarca;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox prodPrice;
         private System.Windows.Forms.TextBox Warranty;
         private System.Windows.Forms.TextBox prodDesc;
-        private System.Windows.Forms.TextBox ProdMarca;
-        private System.Windows.Forms.TextBox proName;
+        private System.Windows.Forms.TextBox proID;
+        private System.Windows.Forms.TextBox proStock;
         private System.Windows.Forms.ComboBox comboBox2;
     }
 }

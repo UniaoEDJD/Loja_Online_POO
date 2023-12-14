@@ -42,7 +42,7 @@ namespace Loja_Online_POO.Forms
 
             if (cliente == null || cliente.Count == 0)
             {
-                MessageBox.Show("Sem clientes disponíveis.");
+                MessageBox.Show("Sem clientes disponíveis."); //MessageBoxButtons.OK);
             }
             else
             {
@@ -68,7 +68,7 @@ namespace Loja_Online_POO.Forms
             //botao para ler a lista de clientes
 
             cliente = LoadHelp.LoadFromFile<Cliente>("clientes.txt");
-            MessageBox.Show("Lista Lida!");
+            MessageBox.Show("Lista Lida!", "Lista" , MessageBoxButtons.OK);
             Listar();
             
         }
@@ -105,7 +105,7 @@ namespace Loja_Online_POO.Forms
                         if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(nif)
                             && !string.IsNullOrEmpty(morada) && !string.IsNullOrEmpty(email))
                         {
-                            sw.WriteLine($"Nome: {nome}, NIF: {nif}, Morada: {morada}, Email: {email}");
+                            sw.WriteLine($"Nome* {nome}, NIF* {nif}, Morada* {morada}, Email* {email}");
                         }
                     }
                 }
