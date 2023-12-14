@@ -41,21 +41,20 @@ namespace Loja_Online_POO.Classes
 
             if (files.Length > 0)
             {
-
                 if (!Directory.Exists(defaultPath))
                 {
                     Directory.CreateDirectory(defaultPath);
                 }
+
                 string imagePath = files[0];
-                string flNm = Path.Combine(defaultPath, Guid.NewGuid().ToString() + Path.GetExtension(imagePath));
-                string dfpf = Path.Combine(defaultPath, Path.GetFileName(imagePath));
+                string fileName = Path.GetFileName(imagePath);
+                string destinationPath = Path.Combine(defaultPath, fileName);
 
-                File.Copy(imagePath, flNm);
+                File.Copy(imagePath, destinationPath);
 
-                pictureBox2.Image = Image.FromFile(imagePath);
+                pictureBox2.Image = Image.FromFile(destinationPath);
 
-               
-                novoProd.ImagePath = dfpf;
+                novoProd.ImagePath = destinationPath;
             }
         }
         //funcao que vai a lista categorias e procura no ficheiro texto o nome e id e popula a lista com o nome, e atribui o respetivo ID
