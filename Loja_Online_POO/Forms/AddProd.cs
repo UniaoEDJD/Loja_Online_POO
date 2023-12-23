@@ -49,9 +49,15 @@ namespace Loja_Online_POO.Classes
                 string imagePath = files[0];
                 string fileName = Path.GetFileName(imagePath);
                 string destinationPath = Path.Combine(defaultPath, fileName);
-
-                File.Copy(imagePath, destinationPath);
-
+                Console.WriteLine($"{destinationPath}");
+                if (!File.Exists(destinationPath))
+                {
+                    File.Copy(imagePath, destinationPath);
+                }
+                else
+                {
+                    MessageBox.Show("Aviso, imagem já existe!", "Aviso");
+                }
                 pictureBox2.Image = Image.FromFile(destinationPath);
 
                 novoProd.ImagePath = destinationPath;
@@ -175,10 +181,10 @@ namespace Loja_Online_POO.Classes
 
             using (StreamWriter sw = new StreamWriter(fileName, true))
             {
-                sw.WriteLine($"productID* {product.productID}, productName* {product.productName}, " +
-                             $"Price* {product.Price}, Description* {product.Description}, " +
-                             $"Warranty* {product.Warranty}, Marca* {product.Marca}, " +
-                             $"CategoryID* {product.ProductCatID}, Stock* {product.Stock}, " +
+                sw.WriteLine($"productID* {product.productID}« productName* {product.productName}« " +
+                             $"Price* {product.Price}« Description* {product.Description}« " +
+                             $"Warranty* {product.Warranty}« Marca* {product.Marca}« " +
+                             $"CategoryID* {product.ProductCatID}« Stock* {product.Stock}« " +
                              $"ImagePath* {product.ImagePath}");
             }
         }
@@ -205,7 +211,14 @@ namespace Loja_Online_POO.Classes
                 string destinationpath = Path.Combine(caminho, Nomefich);
                 System.IO.DirectoryInfo caminhoficheiro = new DirectoryInfo(openFileDialog1.FileName);
                 imagem = caminhoficheiro.Name;
-                File.Copy(imagemselect, destinationpath, true);
+                if (!File.Exists(destinationpath))
+                {
+                    File.Copy(imagemselect, destinationpath, true);
+                }
+                else
+                {
+                    MessageBox.Show("Aviso, imagem já existe!", "Aviso");
+                }
                 pictureBox2.Image = Image.FromFile(caminho + "\\" + Nomefich);
                 novoProd.ImagePath = caminho + "\\" + Nomefich;
             }

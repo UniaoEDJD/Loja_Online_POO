@@ -105,7 +105,7 @@ namespace Loja_Online_POO.Forms
                         if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(nif)
                             && !string.IsNullOrEmpty(morada) && !string.IsNullOrEmpty(email))
                         {
-                            sw.WriteLine($"Nome* {nome}, NIF* {nif}, Morada* {morada}, Email* {email}");
+                            sw.WriteLine($"Nome* {nome}« NIF* {nif}« Morada* {morada}« Email* {email}");
                         }
                     }
                 }

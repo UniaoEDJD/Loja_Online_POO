@@ -23,7 +23,7 @@ namespace Loja_Online_POO.Classes
 
                 foreach (string line in lines)
                 {
-                    string[] parts = line.Split(',');
+                    string[] parts = line.Split('«');
 
                     if (parts.Length > 0)
                     {
@@ -44,12 +44,12 @@ namespace Loja_Online_POO.Classes
                                 {
                                     if (propertyName.Equals("ImagePath", StringComparison.OrdinalIgnoreCase))
                                     {
-                                        // Directly set the ImagePath property
+                                       
                                         property.SetValue(item, propertyValue);
                                     }
                                     else
                                     {
-                                        // Use TypeConverter for other properties
+                                       
                                         TypeConverter typeConverter = TypeDescriptor.GetConverter(property.PropertyType);
                                         object convertedValue = typeConverter.ConvertFromString(propertyValue);
                                         property.SetValue(item, convertedValue);

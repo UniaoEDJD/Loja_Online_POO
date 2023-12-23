@@ -94,7 +94,7 @@ namespace Loja_Online_POO
             using (StreamWriter sw = new StreamWriter(fileName, true))
             {
                 //Guarda a nova categoria no ficheiro 
-                sw.WriteLine($"CategoryID* {categoria.CategoryID}, Name* {categoria.Name}");
+                sw.WriteLine($"CategoryID* {categoria.CategoryID}« Name* {categoria.Name}");
             }
         }
 
