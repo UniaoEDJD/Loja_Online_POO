@@ -17,7 +17,7 @@ namespace Loja_Online_POO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StoreFront());
+            Application.Run(new Form1());
         }
     }
 }

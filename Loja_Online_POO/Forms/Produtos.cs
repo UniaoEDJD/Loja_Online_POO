@@ -97,13 +97,14 @@ namespace Loja_Online_POO.Forms
 
         private void DisplayProductDetails(Product product)
         {
+            double preco = product.Price * (1 - (product.Desconto / 100));
             // Populate other text boxes with product details
             proMarca.Text = product.Marca.ToString();
             proID.Text = product.productID.ToString();
             proStock.Text = product.Stock.ToString();
             prodDesc.Text = product.Description.ToString();
             Warranty.Text = product.Warranty.ToString();
-            prodPrice.Text = product.Price.ToString();
+            prodPrice.Text = preco.ToString();
             pictureBox2.Image = LoadImage(product.ImagePath);
         }
 

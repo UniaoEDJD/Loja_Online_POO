@@ -24,7 +24,10 @@ namespace Loja_Online_POO.Classes
         {
             get { return CategoryID; }
             set { CategoryID = value; }
-        }       
+        }
+        
+        public double Desconto { get; set; }
+
         //construtores da classe
 
         public Product() : base()

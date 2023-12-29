@@ -1,4 +1,5 @@
 ﻿using Microsoft.SqlServer.Server;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -98,6 +99,7 @@ namespace Loja_Online_POO.Classes
             double price = Double.Parse(prodPrice.Text);
             int selectedCategoryID = (int)comboBox1.SelectedValue;
             int stock = Int32.Parse(stockBox.Text);
+            double desconto = Double.Parse(textBox1.Text);
          
 
             if (!String.IsNullOrEmpty(prodID.Text)) 
@@ -112,7 +114,8 @@ namespace Loja_Online_POO.Classes
                     ProductCatID = selectedCategoryID,
                     Price = price,
                     Stock = stock,
-                    ImagePath = novoProd.ImagePath
+                    ImagePath = novoProd.ImagePath,
+                    Desconto = desconto
 
                    
                 };
@@ -185,7 +188,7 @@ namespace Loja_Online_POO.Classes
                              $"Price* {product.Price}« Description* {product.Description}« " +
                              $"Warranty* {product.Warranty}« Marca* {product.Marca}« " +
                              $"CategoryID* {product.ProductCatID}« Stock* {product.Stock}« " +
-                             $"ImagePath* {product.ImagePath}");
+                             $"ImagePath* {product.ImagePath}« Desconto* {product.Desconto}");
             }
         }
 
@@ -235,6 +238,16 @@ namespace Loja_Online_POO.Classes
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
